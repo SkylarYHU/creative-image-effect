@@ -1,0 +1,58 @@
+body{
+  padding: 0;
+  margin: 0;
+  background-color: #efd9ce;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container{
+ position: relative;
+ width: 80vw;
+ height: 50vh;
+}
+
+.clip{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transition: clip-path 0.5s ease-in-out;
+  background-size: cover;
+  background-position: center;
+}
+
+.clip1{
+  background: url(https://images.pexels.com/photos/1435735/pexels-photo-1435735.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(0 0, 40% 0, 30% 100%, 0 100%);
+} 
+
+.clip2{
+  background: url(https://images.pexels.com/photos/867349/pexels-photo-867349.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(40% 0, 75% 0, 70% 100%, 20% 100%);
+}
+
+.clip3{
+  background: url(https://images.pexels.com/photos/46174/strawberries-berries-fruit-freshness-46174.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+  background-size: cover;
+  background-position: center;
+  clip-path: polygon(75% 0, 100% 0, 100% 100%, 60% 100%)
+  
+}
+
+/* When Hovering Over the .container: All .clip elements shrink to nothing (disappear) as their clip-path changes to a small point on the far-right. */
+.container:hover .clip{
+  clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+}
+
+/*  The specific .clip element expands and becomes fully visible, while the others remain collapsed. */
+.container .clip:hover{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
